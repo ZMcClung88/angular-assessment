@@ -3,9 +3,29 @@
         <p>Shop Page</p>
     </div>
 </section>
-<div class="product-grid__item   grid__item one-half large--one-third" >
+<div ng-controller="shopCtrl" class="product-grid__item   grid__item one-half large--one-third">
 
     <!--Repeat over your data and display it below -->
+    <div class="" ng-repeat="p in products">
 
-    
+      <a ui-sref="details" class="product-grid__product">
+          show image <img src="{{p.image}}">
+      </a>
+
+      <!--Product Meta-->
+      <div class="product-grid__meta">
+          <!--Title click Should redirect to the product-details section. remember to pass along the product id so you can make an api call
+      to get the specific product details-->
+          <h3 class="product-grid__name"><a>{{p.title}}<!--Title--></a></h3>
+
+          <!--Product Description-->
+          <h4 class="product-grid__sub">{{p.desc}}<!--Desc--></h4>
+
+          <!--Product Price-->
+          <div class="product-grid__price">{{p.price}}<!--Price--></div>
+      </div>
+
+
+    </div>
+
 </div>
